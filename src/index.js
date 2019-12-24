@@ -37,9 +37,8 @@ class App extends React.Component {
 
     // this will called after our component get rendered
     componentDidMount(){
-        console.log('my component was rendered');
         window.navigator.geolocation.getCurrentPosition(
-            (position) => this.setState({ lat: position.coords.latitude }),
+            (position) => this.setState({ lat: position.coords.latitude }),  // only modify lat and not doing anything to errorMessage
             (err) => this.setState({ errorMessage: err.message })
         );
     }
